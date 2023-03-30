@@ -37,6 +37,6 @@ jobs:
       uses: docker/build-push-action@v4
       with:
           push: true
-          tags: wgdouglas4/ci-cd-integration:latest
+          tags: wgdouglas4/ci-cd-integration
           secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
+            GIT_AUTH_TOKEN=${{ secrets.GIT_AUTH_TOKEN }}
