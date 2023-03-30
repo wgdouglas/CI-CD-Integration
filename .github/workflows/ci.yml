@@ -33,8 +33,10 @@ jobs:
       with:
         arguments: build
   
-    - name: Build and Push Docker Image
+    - name: Build and push
       uses: docker/build-push-action@v4
       with:
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+          push: true
+          tags: wgdouglas4/ci-cd-integration:latest
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
